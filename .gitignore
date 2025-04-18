@@ -1,0 +1,43 @@
+# dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# testing
+coverage/
+*.lcov
+
+# production
+build/
+dist/
+
+# misc
+.DS_Store
+.env
+.env.*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# local environments
+*.local
+*.log
+
+# parcel-bundler cache
+.cache/
+
+# optional: macOS, Windows, Linux 
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# next-gen 
+.eslintcache
+turbo/
+out/
