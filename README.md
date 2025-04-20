@@ -60,7 +60,7 @@ I am an avid cyclist. Sounds like yourself? This is a statement that comes with 
 
 As a bike to work commuter, I needed to carefully plan my route and what I needed to pack for my long journey. This can be of varying importance. 
 
-Picture this:
+*Picture this:*
 * You forget to pack your chargers? 
 * Maybe some construction is on that you haven't considered? 
 * The roads are too icy for your tires? 
@@ -80,32 +80,32 @@ Before getting to work on the website I created wireframes to visualise my creat
 
 ### Home Page
 
-<img src="wireframes/BikeBanterHomePage.drawio.png" alt="Bike Banter Home Page" width="1920" height="1080">
+<img src="Wireframes/BikeBanterHomePage.drawio.png" alt="Bike Banter Home Page" width="1920" height="1080">
 
 
 ### Connect Page
 
-<img src="wireframes/BikeBanterConnectPage.drawio.png" alt="Bike Banter Connect Page" width="1920" height="1080">
+<img src="Wireframes/BikeBanterConnectPage.drawio.png" alt="Bike Banter Connect Page" width="1920" height="1080">
 
 
 ### Gear Page
 
-<img src="wireframes/BikeBanterGearPage.drawio.png" alt="Bike Banter Gear Page" width="1920" height="1080">
+<img src="Wireframes/BikeBanterGearPage.drawio.png" alt="Bike Banter Gear Page" width="1920" height="1080">
 
 
 ### Account Page
 
-<img src="wireframes/BikeBanterConnectPage.drawio.png" alt="Bike Banter Account Page" width="1920" height="1080">
+<img src="Wireframes/BikeBanterConnectPage.drawio.png" alt="Bike Banter Account Page" width="1920" height="1080">
 
 
 ### Settings Page
 
-<img src="wireframes/BikeBanterSettingsPage.drawio.png" alt="Bike Banter Settings Page" width="1920" height="1080">
+<img src="Wireframes/BikeBanterSettingsPage.drawio.png" alt="Bike Banter Settings Page" width="1920" height="1080">
 
 
 ### About Page
 
-<img src="wireframes/BikeBanterAboutPage.drawio.png" alt="Bike Banter About Page" width="1920" height="1080">
+<img src="Wireframes/BikeBanterAboutPage.drawio.png" alt="Bike Banter About Page" width="1920" height="1080">
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
