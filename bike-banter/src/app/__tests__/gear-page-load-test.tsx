@@ -1,10 +1,10 @@
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
-import Home from '../page'
+import Gear from '../gear/page'
 
-describe('Home Page', () => {
-  it('Checks for correct load of home page elements', () => {
-    render(<Home />)
+describe('Gear Page', () => {
+  it('Checks for correct load of gear page elements', () => {
+    render(<Gear />)
 
     // Check if the taskbar has loaded
     const taskbar = screen.getByRole('navigation');
@@ -18,10 +18,6 @@ describe('Home Page', () => {
     const taskbarQuickLinks = screen.getByText(/Taskbar Quick Links/i);
     expect(taskbarQuickLinks).toBeInTheDocument();
 
-    // Check if map has loaded
-    const journeyMap = screen.getByAltText(/Journey Map/i);
-    expect(journeyMap).toBeInTheDocument();
-
     // Check if packing list has loaded
     const packingList = screen.getByText(/Packing List/i);
     expect(packingList).toBeInTheDocument();
@@ -30,13 +26,9 @@ describe('Home Page', () => {
     const userBike = screen.getByText(/User's Bike/i);
     expect(userBike).toBeInTheDocument();
 
-    // Check if journey suggestions have loaded
-    const journeySuggestions = screen.getByText(/Journey Suggestions/i);
-    expect(journeySuggestions).toBeInTheDocument();
-
-    // Check if journey duration has loaded
-    const journeyDuration = screen.getByText(/Journey Duration/i);
-    expect(journeyDuration).toBeInTheDocument();
+    // Check if bike components has loaded
+    const bikeComponents = screen.getByText(/Bike Components/i);
+    expect(bikeComponents).toBeInTheDocument();
 
     // Check if search bar has loaded
     const searchBar = screen.getByPlaceholderText(/Search/i);
