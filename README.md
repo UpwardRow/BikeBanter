@@ -111,3 +111,13 @@ Before getting to work on the website I created wireframes to visualise my creat
 
 
 ### Built With
+
+In the initial setup of my project I used various technologies which aided in development. Typescript and CSS are my main coding languages to develop Bike Banter. They are complemented by the React library, built in the Next.js framework. Images were created in Canva and mockups were done in Draw.io.
+
+### Testing
+
+I pursued Test Driven Development (TDD) to allow my code to be more error free, and to ensure that the proposed elements shown within my wireframes had loaded correctly. This prepared me to work with the data within the APIs, and data retrieved from my database that I used. It really helps when I see where my tests are failing as I debug once I have the core functionality tested and logged.
+
+I find that looking at the website as a whole is overwhelming, that's why breaking it up into more readable testable chunks improves my thinking and logical reasoning. Early on I can see the project without the fog of when the project gets complex, which means having tests also acts as a good baseline to refer back to.
+
+I considered a few different types of testing in conjunction with TDD. Of course, I created Unit Tests which are perfect for TDD, Integration tests, and I considered End to End and Snapshot testing. These are a less TDD appropriate as I needed to test with functional ready code first. Creating these types of tests for the end of the project when I had everything working was better for development.
