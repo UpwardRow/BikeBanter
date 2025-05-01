@@ -6,17 +6,17 @@ describe('Home Page', () => {
   it('Checks for correct load of home page elements', () => {
     render(<Home />)
 
-    // Check if the taskbar has loaded
-    const taskbar = screen.getByRole('navigation');
-    expect(taskbar).toBeInTheDocument();
+    // Check if the navbar has loaded
+    const navbar = screen.getByRole('navigation');
+    expect(navbar).toBeInTheDocument();
 
     // Check if the logo is in the document
     const logo = screen.getByAltText(/Bike Banter logo/i);
     expect(logo).toBeInTheDocument();
 
-    // Check if taskbar quick links have loaded
-    const taskbarQuickLinks = screen.getByText(/Taskbar Quick Links/i);
-    expect(taskbarQuickLinks).toBeInTheDocument();
+    // Check if navbar quick links have loaded
+    const navbarQuickLinks = screen.getByText(/navbar Quick Links/i);
+    expect(navbarQuickLinks).toBeInTheDocument();
 
     // Check if map has loaded
     const journeyMap = screen.getByAltText(/Journey Map/i);
