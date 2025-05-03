@@ -114,6 +114,16 @@ Before getting to work on the website I created wireframes to visualise my creat
 
 In the initial setup of my project I used various technologies which aided in development. Typescript and CSS are my main coding languages to develop Bike Banter. They are complemented by the React library, built in the Next.js framework. Images were created in Canva and mockups were done in Draw.io.
 
+For the 'Journey Map' I had a number of maps and APIs to use. This is where I had some big considerations because of the nature of the project. Here are a few of the available options:
+
+* GoogleMapsAPI
+* OpenStreetMap
+* Mapbox and a Traffic Plugin
+
+I needed to have up to date maps, features which show elevation, real time traffic, and hazards such as road closures. To some extend, I can tell the user to pay for premium to access a wider range of features, because it costs me money to utilize these features in my website. I needed to have advertisements for free users to cover the costs of the core features users, which also cost money to run. 
+
+That left me with the decision, who do I go with? Well, GoogleMapsAPI was the best I think due to the up to date maps, elevation, and road closures. Even if it is the most expensive. OpenStreetMap uses old maps. Not remotely usable. Mapbox uses OpenStreetMap for its primary map too, so that's a no go. 
+
 ### Testing
 
 I pursued Test Driven Development (TDD) to allow my code to be more error free, and to ensure that the proposed elements shown within my wireframes had loaded correctly. This prepared me to work with the data within the APIs, and data retrieved from my database that I used. It really helps when I see where my tests are failing as I debug once I have the core functionality tested and logged.
