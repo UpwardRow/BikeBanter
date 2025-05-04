@@ -1,3 +1,5 @@
+<a id="readme-top"></a>
+
 <a href="https://github.com/UpwardRow/BikeBanter">
     <img src="images-and-videos/bike-banter-logo.png" alt="Bike Banter logo" width="1920" height="1080">
 </a>
@@ -45,7 +47,18 @@
         </li>
       </ul>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#built-with">Built With</a>
+        <ul>
+            <li>
+                <a href="#application-programming-interfaces">Application Programming Interfaces</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="#database">Database</a>
+            </li>
+        </li>
+        </ul>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -78,34 +91,44 @@ That's where **BikeBanter** comes in, you can easily stay organised and connect 
 Before getting to work on the website I created wireframes to visualise my creation. i wanted to create a minimalistic design which employees a trendy, user friendly design. It's important to make it easy on the eyes too with colour as many people would be looking at this website before they set out on their journey the next day.
 
 
-### Home Page
+#### Home Page
 
-<img src="Wireframes/BikeBanterHomePage.drawio.png" alt="Bike Banter Home Page" width="1920" height="1080">
+<img src="Wireframes/BikeBanterHomePage.drawio.png" alt="Bike Banter Home Page" width="100%" height="100%">
 
-
-### Connect Page
-
-<img src="Wireframes/BikeBanterConnectPage.drawio.png" alt="Bike Banter Connect Page" width="1920" height="1080">
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-### Gear Page
+#### Connect Page
 
-<img src="Wireframes/BikeBanterGearPage.drawio.png" alt="Bike Banter Gear Page" width="1920" height="1080">
+<img src="Wireframes/BikeBanterConnectPage.drawio.png" alt="Bike Banter Connect Page" width="100%" height="100%">
 
-
-### Account Page
-
-<img src="Wireframes/BikeBanterConnectPage.drawio.png" alt="Bike Banter Account Page" width="1920" height="1080">
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-### Settings Page
+#### Gear Page
 
-<img src="Wireframes/BikeBanterSettingsPage.drawio.png" alt="Bike Banter Settings Page" width="1920" height="1080">
+<img src="Wireframes/BikeBanterGearPage.drawio.png" alt="Bike Banter Gear Page" width="100%" height="100%">
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-### About Page
+#### Account Page
 
-<img src="Wireframes/BikeBanterAboutPage.drawio.png" alt="Bike Banter About Page" width="1920" height="1080">
+<img src="Wireframes/BikeBanterConnectPage.drawio.png" alt="Bike Banter Account Page" width="100%" height="100%">
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+#### Settings Page
+
+<img src="Wireframes/BikeBanterSettingsPage.drawio.png" alt="Bike Banter Settings Page" width="100%" height="100%">
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+#### About Page
+
+<img src="Wireframes/BikeBanterAboutPage.drawio.png" alt="Bike Banter About Page" width="100%" height="100%">
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -113,6 +136,11 @@ Before getting to work on the website I created wireframes to visualise my creat
 ### Built With
 
 In the initial setup of my project I used various technologies which aided in development. Typescript and CSS are my main coding languages to develop Bike Banter. They are complemented by the React library, built in the Next.js framework. Images were created in Canva and mockups were done in Draw.io.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+#### Application Programming Interfaces
 
 For the 'Journey Map' I had a number of maps and APIs to use. This is where I had some big considerations because of the nature of the project. Here are a few of the available options:
 
@@ -122,7 +150,23 @@ For the 'Journey Map' I had a number of maps and APIs to use. This is where I ha
 
 I needed to have up to date maps, features which show elevation, real time traffic, and hazards such as road closures. To some extend, I can tell the user to pay for premium to access a wider range of features, because it costs me money to utilize these features in my website. I needed to have advertisements for free users to cover the costs of the core features users, which also cost money to run. 
 
-That left me with the decision, who do I go with? Well, GoogleMapsAPI was the best I think due to the up to date maps, elevation, and road closures. Even if it is the most expensive. OpenStreetMap uses old maps. Not remotely usable. Mapbox uses OpenStreetMap for its primary map too, so that's a no go. 
+That left me with the decision, who do I go with? Well, GoogleMapsAPI was the best I think due to the up to date maps, elevation, and road closures. Even if it is the most expensive. OpenStreetMap uses old maps. Not remotely usable. Mapbox uses OpenStreetMap for its primary map too, so that's not an option.
+
+These figures could be hard to handle so implementation of affiliated links and sponsored bike shops would be great. I think if this project reaches an international following thinking of the said monetary avenues would be necessary.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+#### Database
+
+Security is arguably the most important aspect of an entire coding project. The last thing that I would want is to have user data exposed. I needed to create a database which was robust, excellent security features, and easy to work with for the scale of my project. 
+
+I have designed a couple of projects with Firebase in the past but I found it somewhat limiting as a NoSQL database. I wanted to try a PostgreSQL database as I did in college. After some research on Firebase I found that it doesn't scale well, and it can get expensive quickly. 
+
+Supabase was a popular solution to my concerns. It is a generally cheaper, PosgreSQL BaaS platform which gives me just that. The idea of focusing more on the frontend itself with the new React and Next.js framework gave me more beneficial experience to my learning. I'm not as experienced in the field of cybersecurity so this took some of the load off in that area also.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 ### Testing
 
@@ -131,3 +175,5 @@ I pursued Test Driven Development (TDD) to allow my code to be more error free, 
 I find that looking at the website as a whole is overwhelming, that's why breaking it up into more readable testable chunks improves my thinking and logical reasoning. Early on I can see the project without the fog of when the project gets complex, which means having tests also acts as a good baseline to refer back to.
 
 I considered a few different types of testing in conjunction with TDD. Of course, I created Unit Tests which are perfect for TDD, Integration tests, and I considered End to End and Snapshot testing. These are a less TDD appropriate as I needed to test with functional ready code first. Creating these types of tests for the end of the project when I had everything working was better for development.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
