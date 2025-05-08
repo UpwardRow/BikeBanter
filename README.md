@@ -1,7 +1,7 @@
 <a id="readme-top"></a>
 
 <a href="https://github.com/UpwardRow/BikeBanter">
-    <img src="images-and-videos/bike-banter-logo.png" alt="Bike Banter logo" width="1920" height="1080">
+    <img src="images-and-videos/bike-banter-logo-dark-background.png" alt="Bike Banter logo" width="25%" height="25%">
 </a>
 
 <h2>Optimise your cycle tour!</h2>
