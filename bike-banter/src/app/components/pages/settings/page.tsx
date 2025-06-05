@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from 'react'
+import { addUser } from '../../../../services/user_service'
 
 export default function Account() {
     return (<nav className="flex h-[70px] items-center justify-between border-b border-gray-200 p-4">
@@ -40,4 +44,37 @@ export default function Account() {
             </div>
           </nav>
         )
+}
+
+export default function AddUser() {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    try {
+      const data = await addUser(name, email)
+      console.log('User inserted:', data)
+    } catch (err) {
+      console.error('Insert failed:', err)
+    }
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+      <input
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <button type="submit">Add User</button>
+    </form>
+  )
 }
