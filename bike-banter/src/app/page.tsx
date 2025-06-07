@@ -52,6 +52,7 @@ export default function Home() {
           <li className="tracking-[-.01em]">
             Ride
           </li>
+          console.log("ENV:", process.env.BIKE_BANTER_SUPABASE_URL);
         </ol>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
