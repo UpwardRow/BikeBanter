@@ -1,6 +1,6 @@
 import { createClient } from '@supabase/supabase-js'
 
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY!)
+const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!)
 
 function isEmptyObject(obj: any) {
   return obj && Object.keys(obj).length === 0 && obj.constructor === Object;
@@ -14,13 +14,12 @@ describe('Supabase Client', () => {
     var userId: any;
     var currentDate = new Date();
     var createdAt = currentDate.toISOString();
-    console.log('Current Date:', currentDate);
 
     beforeAll(async () => {
 
         /*
             Probably not the best way to do this, as it will get all users, but for testing purposes it works. 
-            Thanks supabase
+            GetUserByEmail() is deprecated. Thanks supabase
         */
         const { data, error } = await supabase.auth.admin.listUsers();
 
@@ -43,9 +42,6 @@ describe('Supabase Client', () => {
             .insert([{ user_id: userId, item_name: 'Test Item', 
                 quantity: 1, packed: true, created_at: createdAt }])
             .select('item_id, user_id, item_name, quantity, packed, created_at')
-
-        console.log('error:', error);
-        console.log('data:', data);
 
         expect(error === null || error === undefined || 
             isEmptyObject(error)).toBe(true);  // Checking for null, undefined, or empty values
