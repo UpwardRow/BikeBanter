@@ -7,13 +7,13 @@ function isEmptyObject(obj: any) {
 }
 
 describe('Supabase Client', () => {
-    let createdPackingItemId: string
-    let user: any
-    // Create a unique email for testing
+    let createdPackingItemId: string;
+    let user: any;
+    // Initialize test email for testing
     const testEmail = 'testing+1750005720751@gmail.com';
-    var userId: any;
-    var currentDate = new Date();
-    var createdAt = currentDate.toISOString();
+    let userId: any;
+    let currentDate = new Date();
+    let createdAt = currentDate.toISOString();
 
     beforeAll(async () => {
 

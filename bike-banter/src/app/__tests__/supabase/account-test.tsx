@@ -20,8 +20,6 @@ describe('Supabase Client', () => {
       password: "12342343"
     });
 
-    console.log('Created user:', data)
-
     if (error) {
       console.error('Signup error:', error)
       throw error;
@@ -32,10 +30,7 @@ describe('Supabase Client', () => {
 
     it('should insert a new user', async () => {
         await new Promise(res => setTimeout(res, 1000)); // Wait for the user to be created
-        console.log('User ID:', user?.id);
-        console.log('User:', user);
         var userId = user?.id;
-        console.log('User:', userId);
         const { data, error } = await supabase
         .from('Users')
         .insert([{ user_id: userId, first_name: 'Test', 
@@ -48,9 +43,6 @@ describe('Supabase Client', () => {
         } else {
           console.log('Insert succeeded:', data);
         }
-        
-        console.log('error:', error);
-        console.log('data:', data);
         
         expect(error === null || error === undefined || 
           isEmptyObject(error)).toBe(true);  // Checking for null, undefined, or empty values
