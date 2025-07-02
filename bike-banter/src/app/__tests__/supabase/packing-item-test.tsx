@@ -10,7 +10,7 @@ describe('Supabase Client', () => {
     let createdPackingItemId: string;
     let user: any;
     // Initialize test email for testing
-    const testEmail = 'testing+1750005720751@gmail.com';
+    const testEmail = 'testing+1751489758044@gmail.com';
     let userId: any;
     let currentDate = new Date();
     let createdAt = currentDate.toISOString();
@@ -34,7 +34,23 @@ describe('Supabase Client', () => {
                 console.log('User not found.');
             }
         }
-    }) 
+    })
+
+    afterAll(async () => {
+        // Cleanup: Delete the packing item created for testing
+        if (createdPackingItemId) {
+            const { error } = await supabase
+                .from('PackingItems')
+                .delete()
+                .eq('item_id', createdPackingItemId);
+
+            if (error) {
+                console.error('Error deleting packing item:', error);
+            } else {
+                console.log('Cleanup completed: Packing item deleted successfully');
+            }
+        }
+    })
 
     it('should insert a new packing item', async () => {
         const { data, error } = await supabase
@@ -42,9 +58,8 @@ describe('Supabase Client', () => {
             .insert([{ user_id: userId, item_name: 'Test Item', 
                 quantity: 1, packed: true, created_at: createdAt }])
             .select('item_id, user_id, item_name, quantity, packed, created_at')
-
-        expect(error === null || error === undefined || 
-            isEmptyObject(error)).toBe(true);  // Checking for null, undefined, or empty values
+        
+        expect(error === null || error === undefined || isEmptyObject(error)).toBe(true);  // Checking for null, undefined, or empty values
         expect(Array.isArray(data)).toBe(true); // Check data is array, not null or anything else
         expect(data).toHaveLength(1)
         createdPackingItemId = data![0].item_id
