@@ -12,20 +12,31 @@ describe('Supabase Client', () => {
     const testEmail = `testing+${Date.now()}@gmail.com`; // Create a unique email for testing
 
     beforeAll(async () => {
-    
-    // As I am creating a new user for each test, I am doing so as an admin. This bypasses the limit rate per IP address  
-    const { data, error } = 
-    await supabase.auth.admin.createUser({ 
-      email: testEmail,
-      password: "12342343"
-    });
+      // I am creating a new user for each test, I am doing so as an admin. This bypasses the limit rate per IP address  
+      const { data, error } = 
+      await supabase.auth.admin.createUser({ 
+        email: testEmail,
+        password: "12342343"
+      });
 
-    if (error) {
-      console.error('Signup error:', error)
-      throw error;
-    }
-        user = data?.user;
-        console.log('Created user two:', data?.user)
+      if (error) {
+        console.error('Signup error:', error)
+        throw error;
+      }
+      user = data?.user;
+      console.log('Created user:', data?.user)
+    })
+
+    afterAll(async () => {
+      // Cleanup: Delete the user created for testing
+      if (user) {
+        const { error } = await supabase.auth.admin.deleteUser(user.id);
+        if (error) {
+          console.error('Error deleting user:', error);
+        } else {
+          console.log('Cleanup completed: User deleted successfully');
+        }
+      }
     })
 
     it('should insert a new user', async () => {
