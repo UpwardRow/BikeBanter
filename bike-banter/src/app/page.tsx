@@ -1,4 +1,11 @@
+// Files in the app directory are server components by default.
+// To make a component render on the client, I used the 'use client' directive. 
+// I'll need to move the file to the `src/app/components/pages` directory to ensure it is treated as a client component.
+'use client';
 import Image from "next/image";
+import React from 'react';
+import {createRoot} from 'react-dom/client';
+import {APIProvider, Map} from '@vis.gl/react-google-maps';
 
 export default function Home() {
   return (
@@ -52,9 +59,18 @@ export default function Home() {
           <li className="tracking-[-.01em]">
             Ride
           </li>
-          console.log("ENV:", process.env.BIKE_BANTER_SUPABASE_URL);
         </ol>
-
+        <div style={{ width: '100vw', height: '50vh', margin: '2rem 0' }}>
+          <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}>
+            <Map
+              style={{ width: '100%', height: '100%' }}
+              defaultCenter={{ lat: 22.54992, lng: 0 }}
+              defaultZoom={3}
+              gestureHandling={'greedy'}
+              disableDefaultUI={true}
+            />
+          </APIProvider>
+        </div>
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <a
             className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
