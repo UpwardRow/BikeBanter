@@ -1,0 +1,16 @@
+export const google = {
+  maps: {
+    Map: class {
+      constructor(element: HTMLElement, options: any) {}
+      setCenter() {}
+      setZoom() {}
+    },
+    Marker: class {
+      constructor(options: any) {}
+      setMap() {}
+    },
+    LatLng: class {
+      constructor(lat: number, lng: number) {}
+    },
+  },
+};

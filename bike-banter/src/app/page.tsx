@@ -3,11 +3,28 @@
 // I'll need to move the file to the `src/app/components/pages` directory to ensure it is treated as a client component.
 'use client';
 import Image from "next/image";
-import React from 'react';
-import {createRoot} from 'react-dom/client';
+import React, { use, useEffect } from 'react';
 import {APIProvider, Map} from '@vis.gl/react-google-maps';
+import { getUserLocation } from "@/utils/get-user-location";
 
 export default function Home() {
+
+  const [userLocation, setUserLocation] = React.useState<google.maps.LatLng | null>(null);
+
+  useEffect(() => {
+    const fetchUserLocation = async () => {
+      try {
+        const location = await getUserLocation();
+        setUserLocation(location);
+        console.log('Fetched user location:' + location.toString());
+      } catch (error) {
+        console.error('Error fetching user location:', error);
+      }
+    };
+
+    fetchUserLocation();
+  } , []);
+
   return (
     <div className="grid grid-rows-[20px_1fr_20px] min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <nav className="flex h-[70px] items-center justify-between border-b border-gray-200 p-4">
