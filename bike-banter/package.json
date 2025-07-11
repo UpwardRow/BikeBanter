@@ -11,9 +11,10 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
+    "@googlemaps/jest-mocks": "^2.22.6",
     "@supabase/supabase-js": "^2.49.4",
     "formdata-node": "^6.0.3",
-    "next": "15.3.0",
+    "next": "^15.3.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "uuid": "^11.1.0"
