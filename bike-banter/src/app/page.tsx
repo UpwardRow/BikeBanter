@@ -3,7 +3,7 @@
 // I'll need to move the file to the `src/app/components/pages` directory to ensure it is treated as a client component.
 'use client';
 import Image from "next/image";
-import React, { use, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { getUserLocation } from "@/utils/get-user-location";
 import UserGoogleMap  from "@/app/components/organisms/google-journey-map";
 
