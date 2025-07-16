@@ -1,7 +1,3 @@
-// Files in the app directory are server components by default.
-// To make a component render on the client, I used the 'use client' directive. 
-// I'll need to move the file to the `src/app/components/pages` directory to ensure it is treated as a client component.
-'use client';
 import Image from "next/image";
 import React, { useEffect } from 'react';
 import { getUserLocation } from "@/utils/get-user-location";
