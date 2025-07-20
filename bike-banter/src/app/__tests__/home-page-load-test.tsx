@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
-import Home from '../components/pages/home/page'
+import Home from '../page'
 
 describe('Home Page', () => {
   it('Checks for correct load of home page elements', () => {
