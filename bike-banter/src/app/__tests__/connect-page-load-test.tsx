@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
-import Connect from '../components/pages/home/page'
+import Connect from '../page'
 
 describe('Connect Page', () => {
   it('Checks for correct load of home page elements', () => {
