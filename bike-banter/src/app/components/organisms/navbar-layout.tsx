@@ -22,10 +22,8 @@ export default function NavbarLayout() {
             </div>
             <div className="flex items-center justify-between">
                 <SearchButton />
-                <InboxButton />
                 <NotificationsButton />
                 <AccountButton />
-                <SettingsButton />
             </div>
         </nav>
     );
