@@ -6,8 +6,10 @@ import React, { useEffect } from 'react';
 import { getUserLocation } from "@/utils/get-user-location";
 import UserGoogleMap from "@/app/components/organisms/google-journey-map";
 import NavbarLayout from "@/app/components/organisms/navbar-layout";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { AppSidebar } from "@/app/components/template/app-sidebar"
 
-export default function Home() {
+export default function Home({ children }: { children: React.ReactNode }) {
 
   const [userLocation, setUserLocation] = React.useState<google.maps.LatLng | null>(null);
 
@@ -27,8 +29,16 @@ export default function Home() {
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <NavbarLayout />
+      <SidebarProvider>
+        <AppSidebar />
+        <main>
+          <SidebarTrigger />
+          {children}
+        </main>
+      </SidebarProvider>
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+        
+      <NavbarLayout />
         <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <li className="tracking-[-.01em]">
             Plan your trip
