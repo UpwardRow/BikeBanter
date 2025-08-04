@@ -1,9 +1,6 @@
 import Image from "next/image";
 import SearchButton from "../atoms/search-button";
-import AccountButton from "../atoms/account-button";
 import NotificationsButton from "../atoms/notifications-button";
-import SettingsButton from "../atoms/settings-button";
-import InboxButton from "../atoms/inbox-button";
 
 export default function NavbarLayout() {
     return (
