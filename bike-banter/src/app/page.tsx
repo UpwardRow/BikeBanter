@@ -5,9 +5,16 @@ import React, { useEffect } from 'react';
 //import './styles/globals.css';
 import { getUserLocation } from "@/utils/get-user-location";
 import UserGoogleMap from "@/app/components/organisms/google-journey-map";
-import NavbarLayout from "@/app/components/organisms/navbar-layout";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
-import { AppSidebar } from "@/app/components/template/app-sidebar"
+import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { AppSidebar } from "@/app/components/templates/sidebar-components/app-sidebar";
+
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+} from "@/components/ui/breadcrumb"
+import { Separator } from "@/components/ui/separator"
 
 export default function Home({ children }: { children: React.ReactNode }) {
 
@@ -28,17 +35,41 @@ export default function Home({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="grid grid-rows-[20px_1fr_20px] gap-16 font-[family-name:var(--font-geist-sans)]">
       <SidebarProvider>
-        <AppSidebar />
-        <main>
-          <SidebarTrigger />
-          {children}
-        </main>
-      </SidebarProvider>
+      <AppSidebar />
+      <SidebarInset>
+        <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
+          <div className="flex items-center gap-2 px-4">
+            <SidebarTrigger className="-ml-1" />
+            <Separator
+              orientation="vertical"
+              className="mr-2 data-[orientation=vertical]:h-4"
+            />
+            <Breadcrumb>
+              <BreadcrumbList>
+                <BreadcrumbItem className="hidden md:block">
+                  <BreadcrumbLink href="#">
+                    Journey Map
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
+          </div>
+        </header>
+        <div className="flex flex-1 flex-col gap-4 p-3 pt-0">
+          <div className="grid auto-rows-min gap-4 md:grid-cols-3">
+            <div className="bg-muted/50 aspect-video rounded-xl"/>
+            <div className="bg-muted/50 aspect-video rounded-xl" />
+            <div className="bg-muted/50 aspect-video rounded-xl" />
+          </div>
+          <div className="bg-muted/50 min-h-[100vh] flex-1 rounded-xl md:min-h-min" >
+            <UserGoogleMap />
+          </div>
+        </div>
+      </SidebarInset>
+    </SidebarProvider>
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        
-      <NavbarLayout />
         <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <li className="tracking-[-.01em]">
             Plan your trip
@@ -50,7 +81,6 @@ export default function Home({ children }: { children: React.ReactNode }) {
             Ride
           </li>
         </ol>
-        <UserGoogleMap />
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <a
             className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
