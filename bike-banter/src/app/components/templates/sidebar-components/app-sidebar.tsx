@@ -20,17 +20,17 @@ const data = {
         },
         {
             title: "Settings",
-            url: "#",
+            url: "/settings",
             icon: Settings,
         },
         {
             title: "Account",
-            url: "#",
+            url: "/account",
             icon: CircleUserRound,
         },
         {
             title: "Gear",
-            url: "#",
+            url: "/gear",
             icon: Bike,
         },
     ]
