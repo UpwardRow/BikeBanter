@@ -1,6 +1,6 @@
 "use client"
 
-import { Bike, CircleUserRound, Inbox, Settings, } from "lucide-react"
+import { Bike, BookOpenText, CircleUserRound, Inbox, Map, Settings, UsersRound, } from "lucide-react"
 import * as React from "react"
 
 import { NavMain } from "@/app/components/templates/sidebar-components/nav-main"
@@ -14,14 +14,9 @@ import {
 const data = {
     navMain: [
         {
-            title: "Inbox",
-            url: "#",
-            icon: Inbox,
-        },
-        {
-            title: "Settings",
-            url: "/settings",
-            icon: Settings,
+            title: "Journey Map",
+            url: "/",
+            icon: Map,
         },
         {
             title: "Account",
@@ -32,6 +27,21 @@ const data = {
             title: "Gear",
             url: "/gear",
             icon: Bike,
+        },
+        {
+            title: "Connect",
+            url: "/connect",
+            icon: UsersRound,
+        },
+        {
+            title: "Settings",
+            url: "/settings",
+            icon: Settings,
+        },
+        {
+            title: "About",
+            url: "/about",
+            icon: BookOpenText,
         },
     ]
 }
