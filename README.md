@@ -59,6 +59,18 @@
             </li>
         </li>
         </ul>
+        <ul>
+            <li>
+                <a href="#testing">Testing</a>
+            </li>
+        </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="#aesthetics">Aesthetics</a>
+            </li>
+        </li>
+        </ul>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -177,5 +189,13 @@ I find that looking at the website as a whole is overwhelming, that's why breaki
 I considered a few different types of testing in conjunction with TDD. Of course, I created Unit Tests which are perfect for TDD, Integration tests, and I considered End to End and Snapshot testing. These are a less TDD appropriate as I needed to test with functional ready code first. Creating these types of tests for the end of the project when I had everything working was better for development.
 
 I appreciate UI testing but it is not applicable for TDD as it requires tests to test the designed UI elements, and test the flow functionality. Therefore, it would be useless using UI testing as UI flow would likely change and create more work for me, but it will be used within my project once the UI is designed. 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Aesthetics
+
+Wireframes were especially useful for the foundations of the pages. As the project progressed I had learned how to utilize libraries such as shadcn, radix, and lucide. This saved a lot of work time, enabling me to focus on the functionality. 
+
+I was able to have a modern design that I could easily update when needed. Handling the moving parts in the sidebar for example would have been a big headache as it grew in complexity. I did not need something revolutionary, I needed reliability.  
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
