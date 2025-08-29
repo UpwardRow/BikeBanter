@@ -6,6 +6,7 @@ import { getUserLocation } from "@/utils/get-user-location";
 import UserGoogleMap from "@/app/components/organisms/google-journey-map";
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/app/components/templates/sidebar-components/app-sidebar";
+import { getUserPackingItems } from "@/utils/get-user-packing-items";
 
 import {
   Breadcrumb,
@@ -64,6 +65,9 @@ export default function Home({ children }: { children: React.ReactNode }) {
             <div className="bg-muted/50 aspect-video rounded-xl">
               <div className="p-4">
                 <h2 className="text-lg font-semibold mb-2">Checklist</h2>
+              </div>
+              <div className="p-4">
+                <h2 className="text-lg font-semibold mb-2 packing-items"></h2>
               </div>
             </div>
             <div className="bg-muted/50 aspect-video rounded-xl">
