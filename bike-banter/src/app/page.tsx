@@ -19,6 +19,7 @@ import { Separator } from "@/components/ui/separator"
 export default function Home({ children }: { children: React.ReactNode }) {
 
   const [userLocation, setUserLocation] = React.useState<google.maps.LatLng | null>(null);
+  const [packingItems, setPackingItems] = React.useState<string[]>([]);
 
   useEffect(() => {
     const fetchUserLocation = async () => {
@@ -32,6 +33,20 @@ export default function Home({ children }: { children: React.ReactNode }) {
     };
 
     fetchUserLocation();
+  }, []);
+
+  useEffect(() => {
+    const fetchPackingItems = async () => {
+      try {
+        const items = await getUserPackingItems();
+        setPackingItems(items);
+        console.log('Fetched packing items:', items);
+      } catch (error) {
+        console.error('Error fetching packing items:', error);
+      }
+    };
+
+    fetchPackingItems();
   }, []);
 
   return (
@@ -67,7 +82,17 @@ export default function Home({ children }: { children: React.ReactNode }) {
                 <h2 className="text-lg font-semibold mb-2">Checklist</h2>
               </div>
               <div className="p-4">
-                <h2 className="text-lg font-semibold mb-2 packing-items"></h2>
+                <h2 className="text-lg font-semibold mb-2 packing-items">
+                  {packingItems.length === 0 ? (
+                    <p>No items found</p>
+                  ) : (
+                    <ul>
+                      {packingItems.map((item, index) => (
+                        <li key={index}>{item}</li>
+                      ))}
+                    </ul>
+                  )}
+                </h2>
               </div>
             </div>
             <div className="bg-muted/50 aspect-video rounded-xl">
