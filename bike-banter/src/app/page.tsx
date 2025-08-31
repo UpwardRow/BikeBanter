@@ -7,6 +7,7 @@ import UserGoogleMap from "@/app/components/organisms/google-journey-map";
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/app/components/templates/sidebar-components/app-sidebar";
 import { getUserPackingItems } from "@/utils/get-user-packing-items";
+import { saveUserPackingItems } from "@/utils/save-user-packing-item";
 
 import {
   Breadcrumb,
@@ -20,6 +21,7 @@ export default function Home({ children }: { children: React.ReactNode }) {
 
   const [userLocation, setUserLocation] = React.useState<google.maps.LatLng | null>(null);
   const [packingItems, setPackingItems] = React.useState<string[]>([]);
+  const [value, setValue] = React.useState("");
 
   useEffect(() => {
     const fetchUserLocation = async () => {
@@ -48,6 +50,16 @@ export default function Home({ children }: { children: React.ReactNode }) {
 
     fetchPackingItems();
   }, []);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("submitted:", value);
+    saveUserPackingItems(value);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+  };
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] gap-16 font-[family-name:var(--font-geist-sans)]">
@@ -80,6 +92,11 @@ export default function Home({ children }: { children: React.ReactNode }) {
             <div className="bg-muted/50 aspect-video rounded-xl">
               <div className="p-4">
                 <h2 className="text-lg font-semibold mb-2">Checklist</h2>
+              </div>
+              <div className="p-4">
+                <form onSubmit={handleSubmit}>
+                  <input type="text" value={value} onChange={handleChange} />
+                </form>
               </div>
               <div className="p-4">
                 <h2 className="text-lg font-semibold mb-2 packing-items">
