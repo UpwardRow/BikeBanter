@@ -8,6 +8,7 @@ import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/s
 import { AppSidebar } from "@/app/components/templates/sidebar-components/app-sidebar";
 import { getUserPackingItems } from "@/utils/get-user-packing-items";
 import { saveUserPackingItems } from "@/utils/save-user-packing-item";
+import { Checkbox } from "@/components/ui/checkbox"
 
 import {
   Breadcrumb,
@@ -61,6 +62,10 @@ export default function Home({ children }: { children: React.ReactNode }) {
     setValue(e.target.value);
   };
 
+  const packingItemPacked = (checked: boolean) => {
+    console.log("Checkbox checked state:", checked);
+  }
+
   return (
     <div className="grid grid-rows-[20px_1fr_20px] gap-16 font-[family-name:var(--font-geist-sans)]">
       <SidebarProvider>
@@ -105,7 +110,9 @@ export default function Home({ children }: { children: React.ReactNode }) {
                   ) : (
                     <ul>
                       {packingItems.map((item, index) => (
-                        <li key={index}>{item}</li>
+                        <li key={index} className="flex flex-row items-center gap-2">
+                          <Checkbox onCheckedChange={packingItemPacked}/>{item}
+                        </li>
                       ))}
                     </ul>
                   )}
