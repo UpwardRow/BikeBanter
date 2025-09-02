@@ -1,4 +1,3 @@
-import { PackingItem } from '@/interfaces/packing-item'
 import { createClient } from '@supabase/supabase-js'
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string
@@ -6,15 +5,13 @@ const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string
 
 const supabase = createClient(supabaseUrl, supabaseKey)
 
-export async function getUserPackingItems(): Promise<PackingItem[]> {
+export async function markPackingItemAsPacked(packingItemId: number, isPacked: boolean) {
     const { data, error } = await supabase
     .from('PackingItems')
-    .select('item_id, user_id, item_name, quantity, packed, created_at')
+    .update({ packed: isPacked })
+    .eq('item_id', packingItemId)
 
     if (error) {
-        console.error('Error fetching packing items:', error.message)
-        return []
+        console.error('Error updating packing status:', error.message)
     }
-
-    return data || []
 }

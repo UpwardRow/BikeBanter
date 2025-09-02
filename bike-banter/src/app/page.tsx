@@ -8,8 +8,10 @@ import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/s
 import { AppSidebar } from "@/app/components/templates/sidebar-components/app-sidebar";
 import { getUserPackingItems } from "@/utils/get-user-packing-items";
 import { saveUserPackingItems } from "@/utils/save-user-packing-item";
+import { markPackingItemAsPacked } from "@/utils/mark-packing-item-as-packed";
 import { Checkbox } from "@/components/ui/checkbox"
-
+import { Input } from "@/components/ui/input"
+import { PackingItem } from "@/interfaces/packing-item";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -18,11 +20,12 @@ import {
 } from "@/components/ui/breadcrumb"
 import { Separator } from "@/components/ui/separator"
 
+
 export default function Home({ children }: { children: React.ReactNode }) {
 
   const [userLocation, setUserLocation] = React.useState<google.maps.LatLng | null>(null);
-  const [packingItems, setPackingItems] = React.useState<string[]>([]);
-  const [value, setValue] = React.useState("");
+  const [packingItems, setPackingItems] = React.useState<PackingItem[]>([]);
+  const [newPackingItem, setValue] = React.useState("");
 
   useEffect(() => {
     const fetchUserLocation = async () => {
@@ -54,8 +57,8 @@ export default function Home({ children }: { children: React.ReactNode }) {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("submitted:", value);
-    saveUserPackingItems(value);
+    console.log("submitted:", newPackingItem);
+    saveUserPackingItems(newPackingItem);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -64,6 +67,7 @@ export default function Home({ children }: { children: React.ReactNode }) {
 
   const packingItemPacked = (checked: boolean) => {
     console.log("Checkbox checked state:", checked);
+    console.log("Packing items: " + packingItems);
   }
 
   return (
@@ -100,7 +104,7 @@ export default function Home({ children }: { children: React.ReactNode }) {
               </div>
               <div className="p-4">
                 <form onSubmit={handleSubmit}>
-                  <input type="text" value={value} onChange={handleChange} />
+                  <Input type ="text" value={newPackingItem} onChange={handleChange}/>
                 </form>
               </div>
               <div className="p-4">
@@ -111,7 +115,7 @@ export default function Home({ children }: { children: React.ReactNode }) {
                     <ul>
                       {packingItems.map((item, index) => (
                         <li key={index} className="flex flex-row items-center gap-2">
-                          <Checkbox onCheckedChange={packingItemPacked}/>{item}
+                          <Checkbox onCheckedChange={packingItemPacked}/>{item.item_name}
                         </li>
                       ))}
                     </ul>
