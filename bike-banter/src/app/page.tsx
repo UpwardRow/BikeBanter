@@ -19,6 +19,7 @@ import {
   BreadcrumbList,
 } from "@/components/ui/breadcrumb"
 import { Separator } from "@/components/ui/separator"
+import { CheckedState } from "@radix-ui/react-checkbox";
 
 
 export default function Home({ children }: { children: React.ReactNode }) {
@@ -65,9 +66,13 @@ export default function Home({ children }: { children: React.ReactNode }) {
     setValue(e.target.value);
   };
 
-  const packingItemPacked = (checked: boolean) => {
+  const packingItemPacked = (itemId: number, checked: CheckedState) => {
+    if (checked === true) {
+      markPackingItemAsPacked(itemId, true);
+    } else if (checked === false) {
+      markPackingItemAsPacked(itemId, false);
+    }
     console.log("Checkbox checked state:", checked);
-    console.log("Packing items: " + packingItems);
   }
 
   return (
@@ -115,7 +120,7 @@ export default function Home({ children }: { children: React.ReactNode }) {
                     <ul>
                       {packingItems.map((item, index) => (
                         <li key={index} className="flex flex-row items-center gap-2">
-                          <Checkbox onCheckedChange={packingItemPacked}/>{item.item_name}
+                          <Checkbox defaultChecked={item.packed} onCheckedChange={(checked) => packingItemPacked(item.item_id, checked)}/>{item.item_name}
                         </li>
                       ))}
                     </ul>

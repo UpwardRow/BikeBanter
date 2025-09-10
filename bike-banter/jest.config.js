@@ -2,9 +2,7 @@
  * For a detailed explanation regarding each configuration property, visit:
  * https://jestjs.io/docs/configuration
  */
-
-import type {Config} from 'jest';
-import nextJest from 'next/jest.js'
+const nextJest = require ('next/jest.js')
 
 const createJestConfig = nextJest({
   // Provides a path to my Next.js app to load next.config.js and .env files for my test environment
@@ -12,7 +10,7 @@ const createJestConfig = nextJest({
 })
 
 // Custom configurations for Jest
-const config: Config = {
+const config = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -109,7 +107,7 @@ const config: Config = {
   // notifyMode: "failure-change",
 
   // A preset that is used as a base for Jest's configuration
-  // preset: undefined,
+  preset: "ts-jest",
 
   // Run tests from one or more projects
   // projects: undefined,
@@ -134,7 +132,7 @@ const config: Config = {
 
   // A list of paths to directories that Jest should use to search for files in
    roots: [
-     "<rootDir>"
+     "<rootDir>/src"
   ],
 
   // Allows you to use a custom runner instead of Jest's default test runner
@@ -182,13 +180,14 @@ const config: Config = {
   // testRunner: "jest-circus/runner",
 
   // A map from regular expressions to paths to transformers
-  // transform: undefined,
+  transform: {
+  '^.+\\.tsx?$': 'ts-jest',
+  },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
-  // transformIgnorePatterns: [
-  //   "\\\\node_modules\\\\",
-  //   "\\.pnp\\.[^\\\\]+$"
-  // ],
+   transformIgnorePatterns: [
+    "/node_modules/(?!isows|@supabase)/"
+  ],
 
   // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
   // unmockedModulePathPatterns: undefined,
@@ -201,6 +200,7 @@ const config: Config = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
 };
 
-export default createJestConfig(config);
+module.exports = createJestConfig(config);
