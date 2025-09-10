@@ -1,4 +1,4 @@
-import { supabase } from '../utils/supabase_client'
+import { supabase } from '../utils/supabase-client'
 
 export async function addUser(name: string, email: string) {
   const { data, error } = await supabase
