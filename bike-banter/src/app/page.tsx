@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import React, { useEffect } from 'react';
-import { getUserLocation } from "@/utils/get-user-location";
 import UserGoogleMap from "@/app/components/organisms/google-journey-map";
+import { getUserLocation } from "@/utils/get-user-location";
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/app/components/templates/sidebar-components/app-sidebar";
 import { getUserPackingItems } from "@/utils/get-user-packing-items";
@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/breadcrumb"
 import { Separator } from "@/components/ui/separator"
 import { CheckedState } from "@radix-ui/react-checkbox";
+import { UserBike } from "@/app/components/atoms/user-bike";
 
 
 export default function Home({ children }: { children: React.ReactNode }) {
@@ -118,6 +119,7 @@ export default function Home({ children }: { children: React.ReactNode }) {
                     <p>No items found</p>
                   ) : (
                     <ul>
+                      {/* Should be moved to its own component. Probably an atom */}
                       {packingItems.map((item, index) => (
                         <li key={index} className="flex flex-row items-center gap-2">
                           <Checkbox defaultChecked={item.packed} onCheckedChange={(checked) => packingItemPacked(item.item_id, checked)}/>{item.item_name}
@@ -131,6 +133,9 @@ export default function Home({ children }: { children: React.ReactNode }) {
             <div className="bg-muted/50 aspect-video rounded-xl">
               <div className="p-4">
                 <h2 className="text-lg font-semibold mb-2">Bike</h2>
+              </div>
+              <div className="p-4">
+                  {/* <UserBike/> */}
               </div>
             </div>
             <div className="bg-muted/50 aspect-video rounded-xl" >
