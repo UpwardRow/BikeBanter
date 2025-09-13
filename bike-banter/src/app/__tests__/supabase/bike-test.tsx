@@ -1,6 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
 import fs from 'fs';
-import { after } from 'next/server';
 import path from 'path';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -8,7 +7,7 @@ const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env
 
 describe('Supabase Client', () => {
   const bikeId = uuidv4() // Generate a unique bike ID for testing
-  const userId = 'c88000ff-db6d-4946-b258-f726938b9a50'; // Example user ID for testing
+  const userId = '000fe1c5-6286-4176-9cd8-485239e9792c'; // Example user ID for testing
   const currentDate = new Date();
   const filePath = `uploads/${userId}/bikes/${currentDate.getTime()}-dahon-mariner-d8.jpeg`;
   const fileBuffer = fs.readFileSync(path.resolve(__dirname, 
