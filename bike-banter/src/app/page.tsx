@@ -20,7 +20,7 @@ import {
 } from "@/components/ui/breadcrumb"
 import { Separator } from "@/components/ui/separator"
 import { CheckedState } from "@radix-ui/react-checkbox";
-import { UserBike } from "@/app/components/atoms/user-bike";
+import UserBike from "@/app/components/atoms/user-bike";
 
 
 export default function Home({ children }: { children: React.ReactNode }) {
@@ -134,9 +134,7 @@ export default function Home({ children }: { children: React.ReactNode }) {
               <div className="p-4">
                 <h2 className="text-lg font-semibold mb-2">Bike</h2>
               </div>
-              <div className="p-4">
-                  {/* <UserBike/> */}
-              </div>
+                <UserBike/> 
             </div>
             <div className="bg-muted/50 aspect-video rounded-xl" >
               <div className="p-4">
