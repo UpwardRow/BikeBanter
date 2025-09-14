@@ -6,6 +6,6 @@ const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string
 const supabase = createClient(supabaseUrl, supabaseKey)
 
 export async function getBikeImage(path: string) {
-  const { data } = supabase.storage.from('my-bucket').getPublicUrl(path);
+  const { data } = supabase.storage.from('test-user-photos').getPublicUrl(path);
   return data.publicUrl;
 }

@@ -1,0 +1,20 @@
+.home-page-bike-image {
+    width: 40%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.home-page-bike-caption {
+    width: 50%;
+    text-align: right;
+    font-size: 4rem;
+    color: var(--color-muted-foreground);
+    display: inline-block;
+    vertical-align: top;
+}
+
+.home-page-bike-container {
+    display: flex;
+    align-items: center;
+}
