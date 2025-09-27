@@ -100,10 +100,34 @@ That's where **BikeBanter** comes in, you can easily stay organised and connect 
 
 ### Design
 
+The design of the project did have a vision that changed a lot. I felt that the front end needed to *feel* modern and fluid. The design in the wireframes simply did not as much as anticipated. Thankfully I started this project with a goal to use everything that I could within libraries available to me, allowing me to seamlessly stay up to date with modern trends. 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+#### Aesthetics
+
+Wireframes were especially useful for the foundations of the pages. As the project progressed I had learned how to utilize libraries such as shadcn, radix, and lucide. This saved a lot of work time, enabling me to focus on the functionality. 
+
+I was able to have a modern design that I could easily update when needed. Handling the moving parts in the sidebar for example would have been a big headache as it grew in complexity. I did not need something revolutionary, I needed reliability.  
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+#### Architecture
+
+React was a completely new library to me and Next.js was a new framework. Therefore, I wanted to know how I could organise the project with the usual conventions, aiding me in composition of future projects. Atomic design methodology by front end engineer, Brad Frost, interested me enough to utilise it in file structure of BikeBanter. This approach to designing the project was not only efficient in thinking of various components which make up the project, but also made the coding far more manageable and fun. 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+#### Wireframes
+
 Before getting to work on the website I created wireframes to visualise my creation. i wanted to create a minimalistic design which employees a trendy, user friendly design. It's important to make it easy on the eyes too with colour as many people would be looking at this website before they set out on their journey the next day.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-#### Home Page
+
+##### Home Page
 
 <img src="Wireframes/BikeBanterHomePage.drawio.png" alt="Bike Banter Home Page" width="100%" height="100%">
 
@@ -180,7 +204,7 @@ Supabase was a popular solution to my concerns. It is a generally cheaper, Posgr
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-### Testing
+#### Testing
 
 I pursued Test Driven Development (TDD) to allow my code to be more error free, and to ensure that the proposed elements shown within my wireframes had loaded correctly. This prepared me to work with the data within the APIs, and data retrieved from my database that I used. It really helps when I see where my tests are failing as I debug once I have the core functionality tested and logged.
 
@@ -189,13 +213,5 @@ I find that looking at the website as a whole is overwhelming, that's why breaki
 I considered a few different types of testing in conjunction with TDD. Of course, I created Unit Tests which are perfect for TDD, Integration tests, and I considered End to End and Snapshot testing. These are a less TDD appropriate as I needed to test with functional ready code first. Creating these types of tests for the end of the project when I had everything working was better for development.
 
 I appreciate UI testing but it is not applicable for TDD as it requires tests to test the designed UI elements, and test the flow functionality. Therefore, it would be useless using UI testing as UI flow would likely change and create more work for me, but it will be used within my project once the UI is designed. 
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Aesthetics
-
-Wireframes were especially useful for the foundations of the pages. As the project progressed I had learned how to utilize libraries such as shadcn, radix, and lucide. This saved a lot of work time, enabling me to focus on the functionality. 
-
-I was able to have a modern design that I could easily update when needed. Handling the moving parts in the sidebar for example would have been a big headache as it grew in complexity. I did not need something revolutionary, I needed reliability.  
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
