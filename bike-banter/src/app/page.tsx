@@ -3,7 +3,6 @@
 import Image from "next/image";
 import React, { useEffect } from 'react';
 import UserGoogleMap from "@/app/components/organisms/google-journey-map";
-import { getUserLocation } from "@/utils/get-user-location";
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/app/components/templates/sidebar-components/app-sidebar";
 import { getUserPackingItems } from "@/utils/get-user-packing-items";
@@ -30,19 +29,19 @@ export default function Home({ children }: { children: React.ReactNode }) {
   const [packingItems, setPackingItems] = React.useState<PackingItem[]>([]);
   const [newPackingItem, setValue] = React.useState("");
 
-  useEffect(() => {
-    const fetchUserLocation = async () => {
-      try {
-        const location = await getUserLocation();
-        setUserLocation(location);
-        console.log('Fetched user location:' + location.toString());
-      } catch (error) {
-        console.error('Error fetching user location:', error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchUserLocation = async () => {
+  //     try {
+  //       const location = await getUserLocation();
+  //       setUserLocation(location);
+  //       console.log('Fetched user location:' + location.toString());
+  //     } catch (error) {
+  //       console.error('Error fetching user location:', error);
+  //     }
+  //   };
 
-    fetchUserLocation();
-  }, []);
+  //   fetchUserLocation();
+  // }, []);
 
   useEffect(() => {
     const fetchPackingItems = async () => {
@@ -102,7 +101,7 @@ export default function Home({ children }: { children: React.ReactNode }) {
         </header>
         <div className="flex flex-1 flex-col gap-4 p-3 pt-0">
           <div className="bg-muted/50 min-h-[100vh] flex-1 rounded-xl md:min-h-min" >
-            <UserGoogleMap />
+            <UserGoogleMap/>
           </div>
           <div className="grid auto-rows-min gap-4 md:grid-cols-3">
             <div className="bg-muted/50 aspect-video rounded-xl">
