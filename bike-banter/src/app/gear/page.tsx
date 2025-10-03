@@ -9,6 +9,7 @@ import {
   BreadcrumbList,
 } from "@/components/ui/breadcrumb"
 import { Separator } from "@/components/ui/separator"
+import BikeComponents from "../components/molecules/bike-components";
 
 export default function Gear() {
   return (
@@ -36,6 +37,7 @@ export default function Gear() {
         </header>
       </SidebarInset>
     </SidebarProvider>
+    <BikeComponents />
     </div>
   )
 }
