@@ -1,4 +1,3 @@
-
 export default function BikeComponents() {
     return(
         <div className="bg-muted/50 aspect-video rounded-xl">

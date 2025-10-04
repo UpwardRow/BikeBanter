@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/breadcrumb"
 import { Separator } from "@/components/ui/separator"
 import { CheckedState } from "@radix-ui/react-checkbox";
-import UserBike from "@/app/components/atoms/user-bike";
+import UserBike from "@/app/components/molecules/user-bike";
 import { Timer } from 'lucide-react'
 
 
@@ -130,12 +130,7 @@ export default function Home({ children }: { children: React.ReactNode }) {
                 </h2>
               </div>
             </div>
-            <div className="bg-muted/50 aspect-video rounded-xl">
-              <div className="p-4">
-                <h2 className="text-lg font-semibold mb-2">Bike</h2>
-              </div>
-                <UserBike/> 
-            </div>
+              <UserBike/> 
             <div className="bg-muted/50 aspect-video rounded-xl" >
               <div className="p-4">
                   <h2 className="text-lg font-semibold mb-2">Duration</h2>
