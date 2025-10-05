@@ -1,7 +1,5 @@
-import Image from "next/image";
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/app/components/templates/sidebar-components/app-sidebar";
-
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -11,6 +9,7 @@ import {
 import { Separator } from "@/components/ui/separator"
 import BikeComponents from "../components/molecules/bike-components";
 import UserBike from "../components/molecules/user-bike";
+import PackingItems from "../components/molecules/packing-items";
 
 export default function Gear() {
   return (
@@ -39,6 +38,9 @@ export default function Gear() {
         <div className="grid auto-rows-min gap-4 md:grid-cols-3">
           <UserBike/>
           <BikeComponents/>
+        </div>
+        <div className="grid auto-rows-min gap-4 md:grid-cols-2">
+        <PackingItems/>
         </div>
       </SidebarInset>
     </SidebarProvider>
