@@ -35,11 +35,11 @@ export default function Gear() {
             </Breadcrumb>
           </div>
         </header>
-        <div className="grid auto-rows-min gap-4 md:grid-cols-3">
+        <div className="grid auto-rows-min gap-4 md:grid-cols-2">
           <UserBike/>
           <BikeComponents/>
         </div>
-        <div className="grid auto-rows-min gap-4 md:grid-cols-2">
+        <div className="grid auto-rows-min gap-4 md:grid-cols-1">
         <PackingItems/>
         </div>
       </SidebarInset>
