@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/breadcrumb"
 import { Separator } from "@/components/ui/separator"
 import BikeComponents from "../components/molecules/bike-components";
-import UserBike from "../components/molecules/user-bike";
+import DisplayUserBike from "../components/molecules/display-user-bike";
 import PackingItems from "../components/molecules/packing-items";
 
 export default function Gear() {
@@ -36,7 +36,7 @@ export default function Gear() {
           </div>
         </header>
         <div className="grid auto-rows-min gap-4 md:grid-cols-2">
-          <UserBike/>
+          <DisplayUserBike/>
           <BikeComponents/>
         </div>
         <div className="grid auto-rows-min gap-4 md:grid-cols-1">

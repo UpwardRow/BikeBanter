@@ -8,7 +8,7 @@ import UploadBikeButton from "../atoms/upload-bike-button";
 const bikeId = '45b46979-ff9d-44c1-a77b-6e71b0f1ce9f'
 const BIKE_DETAILS: BikeDetails = await getBikeImage(bikeId);
 
-export default function UserBike() {
+export default function DisplayUserBike() {
     return(
         <div className="bg-muted/50 aspect-video rounded-xl">
             <div className="p-4">
